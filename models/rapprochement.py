@@ -1,4 +1,3 @@
-import pandas as pd 
 from models.nettoyage import noter
 
 CORRESPONDANCE = {
@@ -33,4 +32,8 @@ CORRESPONDANCE = {
 def rapprocher(df):
     df = df.copy()
     df["produit_id"] = df["code"].map(CORRESPONDANCE)
+    sans_produit = df[df["produit_id"].isna()]
+    for _, ligne in sans_produit.iterrows():
+        noter(f"Rapprochement : aucun produit trouvé pour {ligne['code']} ({ligne['enseigne']})")
+
     return df
