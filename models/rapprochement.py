@@ -37,3 +37,14 @@ def rapprocher(df):
         noter(f"Rapprochement : aucun produit trouvé pour {ligne['code']} ({ligne['enseigne']})")
 
     return df
+
+def ecarter_aberrants(df):
+    df = df.copy()
+    df["mediane"] = df.groupby("produit_id")["prix_paye"].transform("median")
+    aberrant = (df["prix_paye"] > 3 * df["mediane"]) | (df["prix_paye"] < df["mediane"] / 3)
+
+    for _, ligne in df[aberrant].iterrows():
+        noter(f"Prix aberrant écarté : {ligne['code']} ({ligne['enseigne']}), {ligne['prix_paye']:.0f} FCFA contre une médiane de {ligne['mediane']:.0f}")
+
+    df.loc[aberrant, "prix_paye"] = None
+    return df.drop(columns="mediane")
