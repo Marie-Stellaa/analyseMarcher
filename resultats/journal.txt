@@ -1,0 +1,7 @@
+Marché Lagune :2 doublon(s) supprimé(s)
+Marché Lagune: prix inutilisable pour ML-1119
+Marché Lagune: prix inutilisable pour ML-1168
+Baobab Shop : 0 doublon(s) supprimé(s)
+Baobab Shop: prix inutilisable pour BB27999
+Comptoir ivoire : 0 doublon(s) supprimé(s)
+Prix aberrant écarté : ML-1021 (Marché Lagune), 779000 FCFA contre une médiane de 76300
