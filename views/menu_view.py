@@ -5,5 +5,6 @@ def afficher_menu():
     print("3. Panier de rentrée")
     print("4. Historique (Black Friday)")
     print("5. Complexité (liste ou dictionnaire)")
+    print("6. Exporter les résultats (CSV et texte)")
     print("0. Quitter")
     return input("Votre choix : ")

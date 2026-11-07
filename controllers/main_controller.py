@@ -8,7 +8,8 @@ from views import menu_view, synthese_view, comparatif_view
 from models.panier import prix_utilisables, panier_par_enseigne, panier_optimal
 from views import menu_view, synthese_view, comparatif_view, panier_view
 from models.historique import charger_historique, variation_black_friday, resume_par_enseigne, mesurer_recherches
-from views import menu_view, synthese_view, comparatif_view, panier_view, historique_view
+from views import menu_view, synthese_view, comparatif_view, panier_view, historique_view, export_view
+
 
 def preparer_donnees():
     df = charger_tout()
@@ -38,6 +39,20 @@ def lancer():
         elif choix == "5":
             t_liste, t_construction, t_dico = mesurer_recherches()
             historique_view.afficher_complexite(t_liste, t_construction, t_dico)
+        elif choix =="6":
+          export_view.preparer_dossier()
+          variation = variation_black_friday(charger_historique())
+          prix = prix_utilisables(df)
+          total_optimal, choix_articles = panier_optimal(prix)
+          t_liste, t_construction, t_dico = mesurer_recherches()
+
+          export_view.exporter_historique(variation)
+          export_view.exporter_journal()
+          export_view.exporter_comparatif_csv(tableau)
+          export_view.exporter_panier(panier_par_enseigne(prix), total_optimal, choix_articles)
+          export_view.exporter_synthese(victoires(tableau), ecart_moyen(tableau), top3_gains(tableau))
+          export_view.exporter_complexite(t_liste, t_construction, t_dico)
+          print("Fichiers écrits dans le dossier exports/")
         elif choix == "0":
             break
         else:

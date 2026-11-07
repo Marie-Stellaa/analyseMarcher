@@ -18,3 +18,6 @@ def comparer(df):
 
 def exporter_comparatif(tableau):
     tableau.to_csv("resultats/comparatif_prix.csv", index= False, encoding= "utf-8-sig")
+
+def exporter_comparatif(tableau, chemin="resultats/comparatif_prix.csv"):
+    tableau.to_csv(chemin, index=False, encoding="utf-8-sig")

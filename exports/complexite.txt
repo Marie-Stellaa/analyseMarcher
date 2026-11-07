@@ -1,0 +1,3 @@
+Retrouver un prix dans 20 876 lignes
+  Liste : 1.421 ms par recherche (O(n))
+  Dictionnaire : 13.4 ms de construction, puis 0.17 microsecondes par recherche (O(1) en moyenne)

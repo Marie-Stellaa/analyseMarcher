@@ -1,0 +1,14 @@
+Nombre de fois où chaque enseigne est la moins chère
+  Marché Lagune : 6
+  Baobab Shop : 9
+  Comptoir Ivoire : 10
+
+Écart moyen par rapport au prix le plus bas
+  Marché Lagune : 8042 FCFA (3.8 %)
+  Baobab Shop : 2702 FCFA (4.7 %)
+  Comptoir Ivoire : 6667 FCFA (2.8 %)
+
+Les 3 produits où il y a le plus à gagner
+  HP 250 G9 Core i5 8 Go 512 Go : 52800 FCFA (14.9 %), le moins cher : Baobab Shop
+  Apple iPhone 13 128 Go : 26500 FCFA (6.4 %), le moins cher : Baobab Shop
+  Climatiseur LG 1 CV : 26000 FCFA (10.3 %), le moins cher : Baobab Shop
